@@ -1,4 +1,4 @@
-import { css, createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -11,17 +11,11 @@ export const GlobalStyle = createGlobalStyle`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: ${props => props.theme.primary};
+    background-color: ${props => props.theme.gray};
     color: ${props => props.theme.black};
   }
 
   * {
     box-sizing: border-box;
   }
-`
-
-export const flexcenter = css`
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `

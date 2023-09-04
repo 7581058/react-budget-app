@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "expense": "메가커피 오션스무디",
+    "amount": 4500
+  },
+  {
+    "id": 2,
+    "expense": "택시",
+    "amount": 8300
+  },
+  {
+    "id": 3,
+    "expense": "저녁 외식",
+    "amount": 54000
+  },
+  {
+    "id": 4,
+    "expense": "편의점 간식",
+    "amount": 4300
+  },
+  {
+    "id": 5,
+    "expense": "유데미",
+    "amount": 12000
+  },
+  {
+    "id": 6,
+    "expense": "네이버 쿠키",
+    "amount": 1100
+  },
+  {
+    "id": 7,
+    "expense": "오늘의집",
+    "amount": 72000
+  },
+  {
+    "id": 8,
+    "expense": "배달의민족",
+    "amount": 36000
+  }
+]
