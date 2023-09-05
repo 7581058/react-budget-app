@@ -10,15 +10,15 @@ export const handlers = [
 
   rest.post('/expense', async (req, res, ctx) => {
     await sleep(200)
-    // expenses.push({
-    //   id: 5,
-    //   expense: '항목',
-    //   amount: 금액,
-    // })
-    return res(ctx.status(201), ctx.json(expenses))
+    return res(ctx.status(200), ctx.json(expenses))
   }),
 
   rest.delete('/expense/:id', async (req, res, ctx) => {
+    await sleep(200)
+    return res(ctx.status(200), ctx.json(expenses))
+  }),
+
+  rest.post(`/expense/:id`, async (req, res, ctx) => {
     await sleep(200)
     return res(ctx.status(200), ctx.json(expenses))
   }),

@@ -11,11 +11,6 @@ const Loading = () => {
 export default Loading
 
 const Container = styled.div`
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   margin: auto;
   display: flex;
   align-items: center;

@@ -1,26 +1,32 @@
-import React, { Component } from 'react'
 import { styled } from 'styled-components'
 import { BiPencil, BiTrash } from 'react-icons/bi'
+import { ExpenseType } from '@/lib/types'
 
-export default class ExpenseItem extends Component {
-  render() {
-    return (
-      <ListItem>
-        <InfoWrap>
-          <Expense>{this.props.expense.expense}</Expense>
-          <Amount>{this.props.expense.amount}원</Amount>
-        </InfoWrap>
-        <ButtonWrap>
-          <Button>
-            <BiPencil />
-          </Button>
-          <Button onClick={() => this.props.handleClickDelete(this.props.expense.id)}>
-            <BiTrash />
-          </Button>
-        </ButtonWrap>
-      </ListItem>
-    )
-  }
+export const ExpenseItem = ({
+  handleClickDelete,
+  handleClickEdit,
+  expense,
+}: {
+  handleClickDelete: (id: string) => Promise<void>
+  handleClickEdit: (id: string) => Promise<void>
+  expense: ExpenseType
+}) => {
+  return (
+    <ListItem>
+      <InfoWrap>
+        <Expense>{expense.charge}</Expense>
+        <Amount>{expense.amount.toLocaleString('ko-KR')}원</Amount>
+      </InfoWrap>
+      <ButtonWrap>
+        <Button onClick={() => handleClickEdit(expense.id)}>
+          <BiPencil />
+        </Button>
+        <Button onClick={() => handleClickDelete(expense.id)}>
+          <BiTrash />
+        </Button>
+      </ButtonWrap>
+    </ListItem>
+  )
 }
 
 const ListItem = styled.li`

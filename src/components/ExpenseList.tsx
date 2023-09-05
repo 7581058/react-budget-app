@@ -1,20 +1,33 @@
-import React, { Component } from 'react'
 import { styled } from 'styled-components'
-import ExpenseItem from './ExpenseItem'
+import { ExpenseItem } from './ExpenseItem'
+import { ExpenseType } from '@/lib/types'
 
-export default class ExpenseList extends Component {
-  render() {
-    return (
-      <Container>
-        <ListWrap>
-          {this.props.expenseData &&
-            this.props.expenseData.map(expense => {
-              return <ExpenseItem handleClickDelete={this.props.handleClickDelete} key={expense.id} expense={expense} />
-            })}
-        </ListWrap>
-      </Container>
-    )
-  }
+export const ExpenseList = ({
+  handleClickDelete,
+  handleClickEdit,
+  expenseData,
+}: {
+  handleClickDelete: (id: string) => Promise<void>
+  handleClickEdit: (id: string) => Promise<void>
+  expenseData: ExpenseType[]
+}) => {
+  return (
+    <Container>
+      <ListWrap>
+        {expenseData &&
+          expenseData.map(expense => {
+            return (
+              <ExpenseItem
+                handleClickDelete={handleClickDelete}
+                handleClickEdit={handleClickEdit}
+                key={expense.id}
+                expense={expense}
+              />
+            )
+          })}
+      </ListWrap>
+    </Container>
+  )
 }
 
 const Container = styled.div`
